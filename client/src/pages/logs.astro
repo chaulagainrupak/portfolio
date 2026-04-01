@@ -1,0 +1,123 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allPosts = (await getCollection('blog'))
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const latest = allPosts[0];
+const archive = allPosts.slice(1);
+
+let LatestContent = null;
+if (latest) {
+  const rendered = await render(latest);
+  LatestContent = rendered.Content;
+}
+
+const PAGE_SIZE = 10;
+const page = Number(Astro.url.searchParams.get('page') ?? 1);
+const totalPages = Math.ceil(archive.length / PAGE_SIZE);
+const paginated = archive.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+---
+
+<BaseLayout title="Logs">
+
+<main class="min-h-screen bg-[var(--bg-alt)] bg-dotted px-6 lg:px-16 py-16">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- Page Header -->
+    <header class="mb-14">
+      <div class="font-mono text-xs tracking-widest text-[var(--accent)] mb-2">/logs</div>
+      <h1 class="font-serif text-5xl lg:text-6xl tracking-tight text-[var(--text-main)]">
+        Writing
+      </h1>
+    </header>
+
+    <!-- Latest Post -->
+    {latest && (
+      <section class="mb-16">
+        <div class="text-xs font-mono tracking-widest text-[var(--accent)] mb-6 border-b border-[var(--border-light)] pb-2">
+          Latest
+        </div>
+
+        <a href={`/logs/${latest.id}`} class="group block">
+          <time class="text-xs font-mono text-[var(--text-faint)]">
+            {latest.data.pubDate.toDateString()}
+          </time>
+
+          <h2 class="font-serif text-3xl lg:text-4xl mt-2 mb-4 leading-tight group-hover:underline">
+            {latest.data.title}
+          </h2>
+
+          <div class="prose prose-neutral max-w-none line-clamp-[12]">
+            {/* @ts-ignore */}
+            <LatestContent />
+          </div>
+
+          <div class="mt-6 flex items-center justify-between text-xs font-mono">
+            <span class="text-[var(--accent)]">continue →</span>
+            <span class="text-[var(--text-faint)]">/logs/{latest.id}</span>
+          </div>
+        </a>
+      </section>
+    )}
+
+    <!-- Archive -->
+    {archive.length > 0 && (
+      <section>
+        <div class="text-xs font-mono tracking-widest text-[var(--text-faint)] mb-6 border-t border-[var(--border-light)] pt-6">
+          Archive
+        </div>
+
+        <div class="divide-y divide-[var(--border-light)]">
+          {paginated.map((post) => (
+            <a href={`/logs/${post.id}`} class="group flex justify-between gap-6 py-5">
+              <div class="min-w-0">
+                <div class="font-serif text-base group-hover:underline leading-snug">
+                  {post.data.title}
+                </div>
+                <div class="text-xs font-mono text-[var(--text-faint)] mt-1 truncate">
+                  {post.data.description}
+                </div>
+              </div>
+              <time class="text-xs font-mono text-[var(--text-faint)] shrink-0">
+                {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </time>
+            </a>
+          ))}
+        </div>
+
+        <!-- Pagination -->
+        {totalPages > 1 && (
+          <div class="mt-10 flex gap-2 flex-wrap text-xs font-mono">
+            <a
+              href={`?page=${page - 1}`}
+              class={`px-3 py-1 border rounded ${page <= 1 ? 'opacity-30 pointer-events-none' : ''}`}
+            >
+              ← prev
+            </a>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+              <a
+                href={`?page=${p}`}
+                class={`px-3 py-1 border rounded ${p === page ? 'border-[var(--accent)] text-[var(--accent)]' : ''}`}
+              >
+                {p}
+              </a>
+            ))}
+
+            <a
+              href={`?page=${page + 1}`}
+              class={`px-3 py-1 border rounded ${page >= totalPages ? 'opacity-30 pointer-events-none' : ''}`}
+            >
+              next →
+            </a>
+          </div>
+        )}
+      </section>
+    )}
+  </div>
+</main>
+
+</BaseLayout>
