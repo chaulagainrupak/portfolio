@@ -1,0 +1,66 @@
+---
+
+const skills = [
+  "Python","TypeScript","JavaScript","React","Next.js",
+  "Astro.js","Tailwind CSS","FastAPI","Flask","Chart.js",
+  "Manim","Git","Linux","HTML","CSS",
+];
+---
+
+<section id="about" class="bg-[var(--bg-main)] bg-lined">
+
+  <div class="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 px-6 lg:px-16 py-12">
+
+    <div class="lg:border-r border-[var(--border-light)] lg:pr-16 fade-in">
+      <p class="text-[var(--text-mid)] text-base leading-relaxed mb-4 first-letter:font-serif first-letter:text-[4.2rem] first-letter:font-black first-letter:leading-[0.8] first-letter:float-left first-letter:mr-1 first-letter:mt-1 first-letter:text-[var(--accent)]">
+        I'm Rupak — a student at <strong class="text-[var(--text-main)]">Kathmandu University</strong> studying CS and building things on the internet. I like making projects that scratch real itches: exam prep platforms, digital letter services, anonymous message boards. The kind of stuff where you go "huh, why doesn't this exist" and then spend your weekends making it exist.
+      </p>
+      <p class="text-[var(--text-mid)] text-base leading-relaxed mb-4">
+        I live in the <strong class="text-[var(--text-main)]">Python + TypeScript ecosystem</strong>. Backend is usually FastAPI or Flask, frontend is Astro or React or sometimes both at once in ways that probably shouldn't work but do. I care a lot about things actually being fast and the interface not being ugly.
+      </p>
+      <p class="text-[var(--text-mid)] text-base leading-relaxed">
+        When I'm not at the keyboard I'm reading, moderating r/NepalBookClub, or rewatching TMKOC (yes I made a randomizer for it, yes it was necessary, no I don't regret it).
+      </p>
+    </div>
+
+    <div class="fade-in">
+      <div class="mb-8 pb-8 border-b border-[var(--border-light)]">
+        <div class="font-mono text-[0.6rem] font-semibold tracking-[0.15em] uppercase text-[var(--accent)] mb-3">Quick facts</div>
+        <table class="w-full">
+          <tr>
+            <td class="font-mono text-[0.62rem] text-[var(--text-faint)] uppercase tracking-wide pr-4 py-1 whitespace-nowrap align-top">Location</td>
+            <td class="text-sm py-1 text-[var(--text-mid)]">Thimi, Bhaktapur</td>
+          </tr>
+          <tr>
+            <td class="font-mono text-[0.62rem] text-[var(--text-faint)] uppercase tracking-wide pr-4 py-1 whitespace-nowrap align-top">Email</td>
+            <td class="text-sm py-1"><a href="mailto:mail@chaulagainrupak.com.np" class="text-[var(--accent)] no-underline hover:underline">mail@chaulagainrupak.com.np</a></td>
+          </tr>
+          <tr>
+            <td class="font-mono text-[0.62rem] text-[var(--text-faint)] uppercase tracking-wide pr-4 py-1 whitespace-nowrap align-top">Phone</td>
+            <td class="text-sm py-1 text-[var(--text-mid)]">(+977) 98-23900507</td>
+          </tr>
+          <tr>
+            <td class="font-mono text-[0.62rem] text-[var(--text-faint)] uppercase tracking-wide pr-4 py-1 whitespace-nowrap align-top">GitHub</td>
+            <td class="text-sm py-1"><a href="https://github.com/chaulagainrupak" target="_blank" class="text-[var(--accent)] no-underline hover:underline">chaulagainrupak</a></td>
+          </tr>
+          <tr>
+            <td class="font-mono text-[0.62rem] text-[var(--text-faint)] uppercase tracking-wide pr-4 py-1 whitespace-nowrap align-top">LinkedIn</td>
+            <td class="text-sm py-1"><a href="https://linkedin.com/in/chaulagainrupak" target="_blank" class="text-[var(--accent)] no-underline hover:underline">chaulagainrupak</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div>
+        <div class="font-mono text-[0.6rem] font-semibold tracking-[0.15em] uppercase text-[var(--accent)] mb-3">Tech I use</div>
+        <div class="flex flex-wrap gap-2">
+          {skills.map((s) => (
+            <span class="font-mono text-[0.6rem] px-2 py-1 border border-[var(--border-light)] text-[var(--text-mid)] tracking-wide transition-all duration-200 hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-[var(--bg-muted)] hover:-translate-y-0.5 hover:[box-shadow:2px_2px_0_var(--accent)] cursor-default">
+              {s}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

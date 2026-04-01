@@ -1,0 +1,55 @@
+---
+
+const socials = [
+  { href: "https://github.com/chaulagainrupak",      label: "GitHub — chaulagainrupak"  },
+  { href: "https://linkedin.com/in/chaulagainrupak", label: "LinkedIn — chaulagainrupak" },
+  { href: "https://paperguides.org",                 label: "Paper Guides"               },
+  { href: "https://hulak.app",                       label: "Hulak"                      },
+  { href: "https://batasey.chaulagainrupak.com.np",  label: "Batasey"                    },
+];
+---
+
+<section id="contact" class="bg-[var(--text-main)] text-[var(--bg-main)] relative overflow-hidden">
+
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+    <span class="font-serif font-black text-[20vw] text-white/[0.025] tracking-tighter whitespace-nowrap">RUPAK</span>
+  </div>
+
+  <div class="bg-[var(--accent)] px-6 lg:px-16 py-3 flex items-center gap-6">
+    <h2 class="font-mono text-[0.7rem] font-semibold tracking-[0.12em] uppercase text-white whitespace-nowrap">§ Contact</h2>
+    <div class="flex-1 h-px bg-white/30"></div>
+    <span class="font-mono text-[0.6rem] text-white/50 whitespace-nowrap">get in touch</span>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 px-6 lg:px-16 py-16 relative z-10">
+
+    <div class="fade-in">
+      <h2 class="font-serif font-black text-4xl lg:text-6xl leading-none mb-6">
+        Let's build
+        <em class="italic text-[var(--accent-soft)] not-italic block">something</em>
+        together.
+      </h2>
+      <p class="text-[var(--gray-light)] leading-relaxed mb-8 text-base">
+        Internships, collabs, weird ideas, or just saying hi — all welcome. I respond.
+      </p>
+      <a href="mailto:mail@chaulagainrupak.com.np" class="font-mono text-sm text-[var(--accent-soft)] no-underline border-b border-[var(--accent)] pb-0.5 transition-colors hover:text-white">
+        mail@chaulagainrupak.com.np
+      </a>
+    </div>
+
+    <div class="fade-in">
+      <ul class="border border-[var(--border-dark)]">
+        {socials.map((s) => (
+          <li class="border-b border-[var(--border-dark)] last:border-b-0">
+            <a href={s.href} target="_blank" class="flex justify-between items-center px-5 py-4 font-mono text-[0.72rem] tracking-wide text-[var(--gray-light)] no-underline transition-all duration-200 hover:bg-[var(--gray-dark)] hover:text-[var(--accent-soft)] hover:pl-7">
+              <span>{s.label}</span>
+              <span>→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</section>
+

@@ -1,0 +1,90 @@
+---
+
+const projects = [
+  {
+    num: "#01",
+    title: "Paper Guides",
+    badges: [{ label: "Live", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" }, { label: "Featured", cls: "bg-[var(--blue-bg)] text-[var(--blue)] border-[var(--blue-border)]" }],
+    links: [
+      { href: "https://paperguides.org", label: "Live →" },
+      { href: "https://github.com/chaulagainrupak/paper-guides", label: "GitHub" },
+    ],
+    desc: "Platform helping students in Nepal prepare for exams through past papers, model questions, and an AI-powered question generator. Built because I needed it. Ships because others do too.",
+    featured: true,
+  },
+  {
+    num: "#02",
+    title: "Hulak — /hu-laak/ Post Office",
+    badges: [{ label: "In Development", cls: "bg-[var(--amber-bg)] text-[var(--amber)] border-[var(--amber-border)]" }],
+    links: [
+      { href: "https://hulak.app", label: "hulak.app →" },
+      { href: "https://github.com/chaulagainrupak/hulak", label: "GitHub" },
+    ],
+    desc: "Send customized digital letters for any occasion through the internet. Because email is soulless and physical letters are too slow.",
+    featured: false,
+  },
+  {
+    num: "#03",
+    title: "Batasey — Write your feelings into the wind",
+    badges: [{ label: "Live", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" }],
+    links: [
+      { href: "https://batasey.chaulagainrupak.com.np", label: "Live →" },
+      { href: "https://github.com/chaulagainrupak/batasey", label: "GitHub" },
+    ],
+    desc: "Anonymous message-sharing platform. Say the thing you can't say with your name attached to it.",
+    featured: false,
+  },
+  {
+    num: "#04",
+    title: "TMKOC Randomizer",
+    badges: [{ label: "Firefox Extension", cls: "bg-[var(--blue-bg)] text-[var(--blue)] border-[var(--blue-border)]" }],
+    links: [
+      { href: "https://addons.mozilla.org/en-US/firefox/addon/tmkoc-randomizer/", label: "Add-on →" },
+      { href: "https://github.com/chaulagainrupak/tmkocRandomizer", label: "GitHub" },
+    ],
+    desc: "Redirects you to a random Taarak Mehta Ka Ooltah Chashmah episode. Infinite content, infinite chaos.",
+    featured: false,
+  },
+  {
+    num: "#05",
+    title: "KOReader Sync API (KOSync)",
+    badges: [{ label: "Open Source", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" }],
+    links: [{ href: "https://github.com/chaulagainrupak/kosync", label: "GitHub →" }],
+    desc: "Backend implementing KOReader's sync API. Reading position follows you across devices. Quietly useful, zero fanfare.",
+    featured: false,
+  }
+];
+---
+
+<section id="projects" class="bg-[var(--bg-alt)] bg-graph">
+
+  <div class="px-6 lg:px-16 py-12 flex flex-col gap-4">
+    {projects.map((p) => (
+      <div class={`border bg-[var(--bg-main)] transition-[box-shadow] duration-200 hover:[box-shadow:4px_4px_0_var(--text-main)] fade-in ${p.featured ? "border-2 border-[var(--accent)]" : "border-[var(--border-light)]"}`}>
+        <div class="grid grid-cols-[60px_1fr_auto] items-stretch border-b border-[var(--border-light)]">
+          <div class={`flex items-center justify-center font-mono text-[0.7rem] font-semibold text-[var(--bg-main)] border-r border-[var(--border-light)] min-h-[48px] ${p.featured ? "bg-[var(--accent)]" : "bg-[var(--text-main)]"}`}>
+            {p.num}
+          </div>
+          <div class="px-5 py-3">
+            <div class="font-serif text-lg font-bold text-[var(--text-main)] mb-1">{p.title}</div>
+            <div class="flex gap-2">
+              {p.badges.map((b) => (
+                <span class={`font-mono text-[0.55rem] font-semibold tracking-wider uppercase px-2 py-0.5 border ${b.cls}`}>{b.label}</span>
+              ))}
+            </div>
+          </div>
+          <div class="hidden sm:flex items-center gap-2 px-4 border-l border-[var(--border-light)]">
+            {p.links.map((l) => (
+              <a href={l.href} target="_blank" class="font-mono text-[0.62rem] text-[var(--text-faint)] no-underline px-2 py-1 border border-transparent transition-colors whitespace-nowrap hover:text-[var(--accent)] hover:border-[var(--accent)]">
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div class="px-5 py-3 pl-[72px] font-mono text-[0.9rem] text-[var(--text-mid)] leading-relaxed">
+          {p.desc}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

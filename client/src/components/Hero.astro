@@ -5,130 +5,118 @@ import ProfileImage from "../assets/profile.png";
 
 <section
   id="hero"
-  class="min-h-svh grid lg:grid-cols-[1.1fr_0.9fr] bg-paper bg-[length:24px_24px] bg-dotted bg-[var(--bg-main)]"
+  class="min-h-svh grid lg:grid-cols-[1.1fr_0.9fr] bg-[var(--bg-main)] overflow-hidden"
 >
-<div
-  class="bg-[var(--bg-alt)] hero-right relative flex flex-col items-center justify-center p-6 lg:p-16 bg-paper-dark lg:bg-dotted order-1 lg:order-2 overflow-hidden w-full"
->
+  <div class="hero-right bg-[var(--bg-alt)] relative flex flex-col items-center justify-center p-6 lg:p-16 bg-dotted order-1 lg:order-2 overflow-hidden w-full min-h-[420px]">
 
-  <!-- MAIN NOTES (always visible) -->
-
-  <!-- top right -->
-  <div class="absolute top-6 right-6 w-44 p-4 rotate-3 bg-[var(--sticky-yellow)] shadow-lg border border-[var(--border-light)] font-mono text-xs lg:text-sm leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-    shipping hulak.app 📫 <br />
-    in dev as of <br />
-    Mar '26
-  </div>
-
-  <!-- mid right (fixed, no translate) -->
-  <div class="absolute top-[45%] right-6 w-44 p-4 -rotate-2 bg-[var(--sticky-red)] shadow-lg border border-[var(--border-light)] font-mono text-xs lg:text-sm leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-    TMKOC randomizer <br />
-    yes it was <br />
-    necessary
-  </div>
-
-  <!-- bottom left -->
-  <div class="absolute bottom-6 left-6 w-48 p-4 rotate-[-2deg] bg-[var(--sticky-blue)] shadow-lg border border-[var(--border-light)] font-mono text-xs lg:text-sm leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-    KU · CS · 2025–2029 <br />
-    📚 studying & building
-  </div>
-
-  <!-- EXTRA NOTES (only large screens) -->
-
-  <div class="hidden lg:block absolute top-20 left-10 w-40 p-4 rotate-[8deg] bg-[var(--sticky-blue)] shadow-md border border-[var(--border-light)] font-mono text-xs leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-    "to be or not to be" <br />
-    just deploy bro
-  </div>
-
-  <div class="hidden lg:block absolute bottom-24 right-10 w-40 p-4 rotate-6 bg-[var(--sticky-red)] shadow-md border border-[var(--border-light)] font-mono text-xs leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-    why is this not working <br />
-    it worked 2 mins ago 💀
-  </div>
-
-  <div class="hidden lg:block absolute top-[65%] left-10 w-40 p-4 -rotate-4 bg-[var(--sticky-yellow)] shadow-md border border-[var(--border-light)] font-mono text-xs leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-    deploy → panic → fix → repeat
-  </div>
-
-  <!-- MAIN CONTENT -->
-  <div class="relative w-56 h-56 mb-6 transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem] z-10">
-    <div class="absolute inset-0 rounded-full bg-ink translate-x-1.5 translate-y-1.5"></div>
-    <div class="absolute -inset-1 rounded-full border-4 border-[var(--accent)]"></div>
-    <Image
-      src={ProfileImage}
-      alt="Rupak Chaulagain"
-      class="relative w-56 h-56 rounded-full object-cover z-10 filter sepia-[0.1] saturate-[0.9] shadow-xl"
-    />
-  </div>
-
-  <div class="flex gap-6 mt-6 z-10">
-    <div class="text-center border border-[var(--border-light)] p-2 bg-[var(--bg-main)] shadow-lg transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-      <span class="block font-serif text-[var(--accent)] text-2xl font-bold">6+</span>
-      <span class="block text-xs uppercase tracking-wide text-[var(--text-faint)]">Projects</span>
+    <div class="absolute top-6 right-6 w-44 p-4 rotate-3 bg-[var(--sticky-yellow)] shadow-lg border border-[var(--border-light)] font-mono text-xs lg:text-sm leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+      shipping hulak.app 📫<br />
+      in dev as of<br />
+      Mar '26
     </div>
-    <div class="text-center border border-[var(--border-light)] p-2 bg-[var(--bg-main)] shadow-lg transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-      <span class="block font-serif text-[var(--accent)] text-2xl font-bold">3+</span>
-      <span class="block text-xs uppercase tracking-wide text-[var(--text-faint)]">Live apps</span>
+
+    <div class="absolute top-[45%] right-6 w-44 p-4 -rotate-2 bg-[var(--sticky-red)] shadow-lg border border-[var(--border-light)] font-mono text-xs lg:text-sm leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+      TMKOC randomizer<br />
+      yes it was<br />
+      necessary
     </div>
-    <div class="text-center border border-[var(--border-light)] p-2 bg-[var(--bg-main)] shadow-lg transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-      <span class="block font-serif text-[var(--accent)] text-2xl font-bold">2029</span>
-      <span class="block text-xs uppercase tracking-wide text-[var(--text-faint)]">Grad year</span>
+
+    <div class="absolute bottom-6 left-6 w-48 p-4 -rotate-2 bg-[var(--sticky-blue)] shadow-lg border border-[var(--border-light)] font-mono text-xs lg:text-sm leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+      KU · CS · 2025–2029<br />
+      📚 studying & building
     </div>
+
+    <div class="hidden lg:block absolute top-20 left-10 w-40 p-4 rotate-[8deg] bg-[var(--sticky-blue)] shadow-md border border-[var(--border-light)] font-mono text-xs leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+      "to be or not to be"<br />
+      just deploy bro
+    </div>
+
+    <div class="hidden lg:block absolute bottom-24 right-10 w-40 p-4 rotate-6 bg-[var(--sticky-red)] shadow-md border border-[var(--border-light)] font-mono text-xs leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+      why is this not working<br />
+      it worked 2 mins ago 💀
+    </div>
+
+    <div class="hidden lg:block absolute top-[65%] left-10 w-40 p-4 -rotate-4 bg-[var(--sticky-yellow)] shadow-md border border-[var(--border-light)] font-mono text-xs leading-relaxed transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+      deploy → panic → fix → repeat
+    </div>
+
+    <div class="relative w-56 h-56 mb-6 transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2 z-10">
+      <div class="absolute inset-0 rounded-full bg-[var(--text-main)] translate-x-1.5 translate-y-1.5"></div>
+      <div class="absolute -inset-1 rounded-full border-4 border-[var(--accent)]"></div>
+      <Image
+        src={ProfileImage}
+        alt="Rupak Chaulagain"
+        class="relative w-56 h-56 rounded-full object-cover z-10 sepia-[0.1] saturate-90 shadow-xl"
+      />
+    </div>
+
+    <p class="font-mono text-[0.6rem] uppercase tracking-widest text-[var(--text-faint)] text-center mb-4 z-10">
+      fig. 1 — the developer in his natural state
+    </p>
+
+    <div class="flex gap-4 mt-2 z-10">
+      <div class="text-center border border-[var(--border-light)] p-3 bg-[var(--bg-main)] shadow-lg transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+        <span class="block font-serif text-[var(--accent)] text-2xl font-bold">6+</span>
+        <span class="block font-mono text-[0.55rem] uppercase tracking-wide text-[var(--text-faint)]">Projects</span>
+      </div>
+      <div class="text-center border border-[var(--border-light)] p-3 bg-[var(--bg-main)] shadow-lg transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+        <span class="block font-serif text-[var(--accent)] text-2xl font-bold">3+</span>
+        <span class="block font-mono text-[0.55rem] uppercase tracking-wide text-[var(--text-faint)]">Live apps</span>
+      </div>
+      <div class="text-center border border-[var(--border-light)] p-3 bg-[var(--bg-main)] shadow-lg transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2">
+        <span class="block font-serif text-[var(--accent)] text-2xl font-bold">2029</span>
+        <span class="block font-mono text-[0.55rem] uppercase tracking-wide text-[var(--text-faint)]">Grad year</span>
+      </div>
+    </div>
+
   </div>
 
-</div>
-  <div
-    class="hero-left flex flex-col justify-center p-6 lg:p-16 border-b lg:border-b-0 lg:border-r lg:pr-16 order-2 lg:order-1 border-[var(--border-light)]"
-  >
-    <div class="text-xs font-mono uppercase tracking-widest text-[var(--text-faint)] mb-4">
+  <div class="hero-left flex flex-col justify-center p-6 lg:p-16 border-b lg:border-b-0 lg:border-r border-[var(--border-light)] order-2 lg:order-1">
+
+    <div class="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--text-faint)] mb-4 flex items-center gap-2 before:content-['>>>'] before:text-[var(--accent)] before:font-semibold">
       Student developer & builder
     </div>
 
-    <h1 class="font-serif font-black text-5xl lg:text-8xl leading-[1.01] mb-6">
-      <span class="font-bold">Rupak </span>
+    <h1 class="font-serif font-black text-5xl lg:text-8xl leading-[0.95] tracking-tight mb-2">
+      Rupak
       <span class="italic text-[var(--accent)] font-normal block">Chaulagain</span>
     </h1>
 
-    <blockquote class="italic text-lg mb-6 border-l-4 border-[var(--accent)] pl-4 font-serif">
-      Making stuff, breaking stuff, and occasionally <br />
+    <blockquote class="italic text-lg mb-8 mt-6 border-l-4 border-[var(--accent)] pl-4 font-serif text-[var(--text-mid)] max-w-sm leading-snug">
+      Making stuff, breaking stuff, and occasionally
       shipping stuff that people actually use.
     </blockquote>
 
-    <div class="flex flex-col gap-1 mb-6 text-sm font-serif">
+    <div class="flex flex-col gap-1 mb-8 font-mono text-sm">
       <div class="flex gap-2">
-        <span class="font-mono text-[var(--text-faint)] min-w-[80px]">Location</span>
-        Thimi, Bhaktapur, Nepal
+        <span class="text-[var(--text-faint)] min-w-[80px]">Location</span>
+        <span class="text-[var(--text-mid)]">Thimi, Bhaktapur, Nepal</span>
       </div>
       <div class="flex gap-2">
-        <span class="font-mono text-[var(--text-faint)] min-w-[80px]">Current</span>
-        BSc CS @ Kathmandu University
+        <span class="text-[var(--text-faint)] min-w-[80px]">Current</span>
+        <span class="text-[var(--text-mid)]">BSc CS @ Kathmandu University</span>
       </div>
       <div class="flex gap-2">
-        <span class="font-mono text-[var(--text-faint)] min-w-[80px]">Stack</span>
+        <span class="text-[var(--text-faint)] min-w-[80px]">Stack</span>
         <span class="text-[var(--accent)]">Python · TS · Astro · FastAPI</span>
       </div>
       <div class="flex gap-2">
-        <span class="font-mono text-[var(--text-faint)] min-w-[80px]">Status</span>
+        <span class="text-[var(--text-faint)] min-w-[80px]">Status</span>
         <span class="text-[var(--accent)]">● open to opportunities</span>
       </div>
     </div>
 
     <div class="flex flex-wrap gap-3">
-      <a href="/resume" class="xl:px-8 xl:py-4 px-4 py-2 text-sm xl:text-xl font-semibold text-[var(--white)] bg-[var(--green)] transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem]">
-        Resume
+      <a href="#projects" class="px-5 py-2 xl:px-8 xl:py-4 font-mono text-sm xl:text-base font-semibold uppercase tracking-wider text-white bg-[var(--accent)] border-2 border-[var(--accent)] transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2 hover:bg-[var(--text-main)] hover:border-[var(--text-main)]">
+        See my work
       </a>
-      <a
-        href="#contact"
-        class="border-2 border-[var(--text-mid)] text-[var(--text-main)] xl:px-8 xl:py-4 px-4 py-2 text-sm font-semibold transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem] hover:bg-ink hover:text-paper"
-      >
-        Contact
+      <a href="#contact" class="px-5 py-2 xl:px-8 xl:py-4 font-mono text-sm xl:text-base font-semibold uppercase tracking-wider text-[var(--text-main)] border-2 border-[var(--text-mid)] transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2 hover:bg-[var(--text-main)] hover:text-[var(--bg-main)]">
+        Say hello
       </a>
-      <a
-        href="https://github.com/chaulagainrupak"
-        target="_blank"
-        class="border-2 border-[var(--text-mid)] text-[var(--text-main)] xl:px-8 xl:py-4 px-4 py-2 text-sm font-semibold transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-[0.5rem] hover:bg-ink hover:text-paper"
-      >
+      <a href="https://github.com/chaulagainrupak" target="_blank" class="px-5 py-2 xl:px-8 xl:py-4 font-mono text-sm xl:text-base font-semibold uppercase tracking-wider text-[var(--text-main)] border-2 border-[var(--text-mid)] transition-transform duration-300 transform hover:scale-[1.06] hover:-translate-y-2 hover:bg-[var(--text-main)] hover:text-[var(--bg-main)]">
         GitHub
       </a>
     </div>
+
   </div>
 </section>
