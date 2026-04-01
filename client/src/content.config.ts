@@ -12,7 +12,8 @@ const blog = defineCollection({
       description: z.string().optional(),
       tags: z.array(z.string()).default([]),
       draft: z.boolean().default(false),
-      heroImage: image().optional(),
+      heroImage: image(),
+      
       slug: z.string().optional(), // only if you want custom slug
 
       // system/computed fields — do NOT type manually

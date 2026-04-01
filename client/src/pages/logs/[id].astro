@@ -1,7 +1,8 @@
 ---
+import { Image } from "astro:assets";
+
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 // Compute reading time from text
 function computeReadingTime(text = "") {
   const words = text.trim().split(/\s+/).length;
@@ -25,7 +26,8 @@ function extractLinks(body = "") {
 // @ts-ignore
 function getSlug(post) {
   if (post.data.slug && post.data.slug.trim() !== "") return post.data.slug;
-  if (post.data.title) return post.data.title.toLowerCase().replace(/\s+/g, "-");
+  if (post.data.title)
+    return post.data.title.toLowerCase().replace(/\s+/g, "-");
   return post.id.toLowerCase().replace(/\s+/g, "-");
 }
 
@@ -58,7 +60,6 @@ const outgoingLinks = extractLinks(rawBody);
 const slug = getSlug(post);
 ---
 
-
 <BaseLayout
   title={title}
   description={description}
@@ -71,17 +72,20 @@ const slug = getSlug(post);
     {
       post.data.heroImage && (
         <div class="absolute inset-0 z-0">
-          <img
-            src={post.data.heroImage.src}
-            class="w-full h-full object-cover  brightness-90"
-            alt=""
+          
+          <Image
+            src={post.data.heroImage}
+            alt={title}
+            class="w-full h-full object-cover brightness-90"
+            inferSize
+            sizes="100vw"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-main)] to-transparent" />
         </div>
       )
     }
     <div class="relative z-10 px-6 lg:px-16 pb-12 w-full">
-      <h1
+      <span
         class="font-serif text-[clamp(2rem,5vw,3.5rem)] md:text-[clamp(2.5rem,6vw,4.5rem)]
   text-[var(--text-main)] leading-[1.1] tracking-tight mb-4
   overflow-hidden
@@ -92,7 +96,7 @@ const slug = getSlug(post);
   max-h-[8rem] md:max-h-[12rem]"
       >
         {title}
-      </h1>
+    </span>
       <p
         class="font-serif italic text-lg md:text-2xl text-[var(--accent)] leading-tight max-w-4xl mb-8
   overflow-hidden

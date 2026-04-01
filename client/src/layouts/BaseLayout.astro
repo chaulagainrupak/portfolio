@@ -3,19 +3,50 @@ import "../styles/global.css";
 import NavigationBar from "../components/NavigationBar.astro";
 import Footer from "../components/Footer.astro";
 
-const { title = 'Untitled', description = '', canonical = '' } = Astro.props;
+const {
+  title = 'Untitled',
+  description = '',
+  canonical = '',
+  ogImage = '', 
+  ogType = 'website',
+  twitterCard = 'summary_large_image', // Card type for Twitter
+} = Astro.props;
+const siteName = 'chaulagainrupak.com.np';
+const currentUrl = canonical || `https://${siteName}${Astro.url.pathname}`;
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    
     {canonical && <link rel="canonical" href={canonical} />}
+    
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Analytics -->
+    <script is:inline defer src="https://analytics.chaulagainrupak.com.np/script.js" data-website-id="a06f5580-ac5c-4b4b-a837-8979f7d9818e"></script>
   </head>
 
   <body class="flex flex-col min-h-screen">
