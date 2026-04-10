@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chaulagainrupak.com.np/sitemap-index.xml
