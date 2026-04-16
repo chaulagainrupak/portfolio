@@ -65,11 +65,11 @@ What actually happened sometimes looked closer to:
 
 Still, a few versions survived the process.
 
-![First Hulak Letter Envelope](first_hulak_letter.png)
+![First Hulak Letter Envelope](./images/first_hulak_letter.png)
 
 And another one that somehow behaves differently depending on the phase of the moon:
 
-![Second Hulak Envelope](hulak_second_envelope.png)
+![Second Hulak Envelope](./images/hulak_second_envelope.png)
 
 They look calm in screenshots. In reality, there were moments where resizing the browser felt like triggering hidden traps.
 
