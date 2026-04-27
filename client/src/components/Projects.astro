@@ -4,7 +4,10 @@ const projects = [
   {
     num: "#01",
     title: "Paper Guides",
-    badges: [{ label: "Live", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" }, { label: "Featured", cls: "bg-[var(--blue-bg)] text-[var(--blue)] border-[var(--blue-border)]" }],
+    badges: [
+      { label: "Live", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" },
+      { label: "Featured", cls: "bg-[var(--blue-bg)] text-[var(--blue)] border-[var(--blue-border)]" }
+    ],
     links: [
       { href: "https://paperguides.org", label: "Live →" },
       { href: "https://github.com/chaulagainrupak/paper-guides", label: "GitHub" },
@@ -15,7 +18,9 @@ const projects = [
   {
     num: "#02",
     title: "Hulak — /hu-laak/ Post Office",
-    badges: [{ label: "In Development", cls: "bg-[var(--amber-bg)] text-[var(--amber)] border-[var(--amber-border)]" }],
+    badges: [
+      { label: "In Development", cls: "bg-[var(--amber-bg)] text-[var(--amber)] border-[var(--amber-border)]" }
+    ],
     links: [
       { href: "https://hulak.app", label: "hulak.app →" },
       { href: "https://github.com/chaulagainrupak/hulak", label: "GitHub" },
@@ -26,7 +31,9 @@ const projects = [
   {
     num: "#03",
     title: "Batasey — Write your feelings into the wind",
-    badges: [{ label: "Live", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" }],
+    badges: [
+      { label: "Live", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" }
+    ],
     links: [
       { href: "https://batasey.chaulagainrupak.com.np", label: "Live →" },
       { href: "https://github.com/chaulagainrupak/batasey", label: "GitHub" },
@@ -37,7 +44,9 @@ const projects = [
   {
     num: "#04",
     title: "TMKOC Randomizer",
-    badges: [{ label: "Firefox Extension", cls: "bg-[var(--blue-bg)] text-[var(--blue)] border-[var(--blue-border)]" }],
+    badges: [
+      { label: "Firefox Extension", cls: "bg-[var(--blue-bg)] text-[var(--blue)] border-[var(--blue-border)]" }
+    ],
     links: [
       { href: "https://addons.mozilla.org/en-US/firefox/addon/tmkoc-randomizer/", label: "Add-on →" },
       { href: "https://github.com/chaulagainrupak/tmkocRandomizer", label: "GitHub" },
@@ -48,9 +57,26 @@ const projects = [
   {
     num: "#05",
     title: "KOReader Sync API (KOSync)",
-    badges: [{ label: "Open Source", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" }],
-    links: [{ href: "https://github.com/chaulagainrupak/kosync", label: "GitHub →" }],
+    badges: [
+      { label: "Open Source", cls: "bg-[var(--green-bg)] text-[var(--green)] border-[var(--green-border)]" }
+    ],
+    links: [
+      { href: "https://github.com/chaulagainrupak/kosync", label: "GitHub →" }
+    ],
     desc: "Backend implementing KOReader's sync API. Reading position follows you across devices. Quietly useful, zero fanfare.",
+    featured: false,
+  },
+  {
+    num: "#06",
+    title: "Tri-Language Translator",
+    badges: [
+      { label: "Firefox Extension", cls: "bg-[var(--blue-bg)] text-[var(--blue)] border-[var(--blue-border)]" },
+      { label: "TMT Hackathon 2026", cls: "bg-[var(--amber-bg)] text-[var(--amber)] border-[var(--amber-border)]" }
+    ],
+    links: [
+      { href: "https://addons.mozilla.org/en-US/firefox/addon/tri-language/", label: "Add-on →" }
+    ],
+    desc: "Browser extension built for the KU ILPRL Google TMT Hackathon 2026. Enables multilingual translation between English, Nepali, and Tamang using the Google TMT API. Designed for real-world language access in the browser.",
     featured: false,
   }
 ];
